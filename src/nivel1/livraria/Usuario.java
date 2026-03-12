@@ -1,6 +1,7 @@
 package nivel1.livraria;
 
 
+import java.util.Arrays;
 
 public class Usuario {
 
@@ -48,4 +49,14 @@ public class Usuario {
              }
          }
      }
+
+     @Override
+     public String toString() {
+         return "Usuario{" +
+                 "nome='" + nome + '\'' +
+                 ", livrosEmprestados=" + Arrays.toString(livrosEmprestados) +
+                 '}';
+     }
+
+
 }

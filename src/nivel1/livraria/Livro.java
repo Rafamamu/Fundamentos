@@ -42,5 +42,12 @@ public class Livro {
         this.status = status;
     }
 
-
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "nome='" + nome + '\'' +
+                ", autor='" + autor + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

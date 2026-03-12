@@ -119,5 +119,19 @@ public class Livraria {
 
     }
 
+    public void listarUsuarios() {
+
+        for (int i = 0; i < usuariosCadastrados.length; i++) {
+
+            if (usuariosCadastrados[i] != null) {
+
+                System.out.println("Lista de Usuários : "+usuariosCadastrados[i]);
+
+            }
+
+        }
+
+    }
+
 
 }
