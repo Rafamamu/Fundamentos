@@ -65,7 +65,7 @@ public class Livraria {
 
 
 
-    public boolean deletarUsuário(int id) {
+    public boolean deletarUsuario(int id) {
         if (id < usuariosCadastrados.length && id >= 0) {
 
             if (usuariosCadastrados[id] != null) {
@@ -121,16 +121,33 @@ public class Livraria {
 
     public void listarUsuarios() {
 
+
+        System.out.print("------------------Lista de usuários: ");
+
         for (int i = 0; i < usuariosCadastrados.length; i++) {
+
 
             if (usuariosCadastrados[i] != null) {
 
-                System.out.println("Lista de Usuários : "+usuariosCadastrados[i]);
+                System.out.println(usuariosCadastrados[i]);
 
             }
 
         }
 
+    }
+
+    public void listarLivros() {
+
+        System.out.print("----------------Lista de livros Cadastrados: ");
+        for (int i = 0; i < livrosCadastrados.length; i++) {
+
+            if (livrosCadastrados[i] != null) {
+
+                System.out.println(livrosCadastrados[i]);
+
+            }
+        }
     }
 
 
