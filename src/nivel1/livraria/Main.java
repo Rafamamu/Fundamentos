@@ -8,6 +8,7 @@ public class Main {
         Livraria adm = new Livraria();
 
 
+
         int opcao = 0;
 
         do {
@@ -36,6 +37,30 @@ public class Main {
                     Livro livro = new Livro(nome,autor, Status.DISPONIVEL);
                     adm.cadastrarLivros(livro);
                     break;
+
+                case 2:
+                    System.out.print("Digite o nome do usuário: ");
+                    String nomeUser = scanner.nextLine();
+                    System.out.println("---------------------------");
+                    Usuario usuario = new Usuario(nomeUser);
+                    adm.cadastrarUsuario(usuario);
+                    System.out.println("Usuário Cadastrado com sucesso!");
+                    break;
+
+                case 3:
+                    System.out.println("Lista de livros cadastrados: ");
+                    System.out.println("------------------------------");
+                    adm.listarLivros();
+                    System.out.println("Digite o id do livro: ");
+                    int  id = scanner.nextInt();
+                    adm.buscarLivroPorId(id);
+                    Livro livro1 = new Livro(livro.getNome(), livro.getAutor(), livro.getStatus());
+                    System.out.println("Digite o id do usuário: ");
+                    int idUsuario = scanner.nextInt();
+
+
+
+
 
             }
 

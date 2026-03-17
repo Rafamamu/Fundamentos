@@ -64,7 +64,6 @@ public class Livraria {
     }
 
 
-
     public boolean deletarUsuario(int id) {
         if (id < usuariosCadastrados.length && id >= 0) {
 
@@ -89,14 +88,13 @@ public class Livraria {
 
             }
 
-        }else {
+        } else {
             System.out.println("Esse id não existe!");
 
-            return  false;
+            return false;
         }
 
     }
-
 
 
     public void emprestarLivro(Usuario usuario, Livro livro) {
@@ -139,15 +137,23 @@ public class Livraria {
 
     public void listarLivros() {
 
-        System.out.print("----------------Lista de livros Cadastrados: ");
         for (int i = 0; i < livrosCadastrados.length; i++) {
 
             if (livrosCadastrados[i] != null) {
 
-                System.out.println(livrosCadastrados[i]);
+                System.out.println("id: " + i + "\n" + livrosCadastrados[i]);
+                System.out.println("---------------------------------");
 
             }
         }
+    }
+
+    public Livro buscarLivroPorId(int id) {
+        return  livrosCadastrados[id];
+    }
+
+    public Usuario buscarUsuarioPorId(int id) {
+        return usuariosCadastrados[id];
     }
 
 
