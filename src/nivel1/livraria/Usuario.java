@@ -52,11 +52,9 @@ public class Usuario {
 
      @Override
      public String toString() {
-         return "Usuario{" +
-                 "nome='" + nome + '\'' +
-                 ", livrosEmprestados=" + Arrays.toString(livrosEmprestados) +
-                 '}';
+         return "Usuário:\n" + nome+" "+
+                 "Livros emprestados: " + Arrays.toString(livrosEmprestados);
+
+
      }
-
-
 }

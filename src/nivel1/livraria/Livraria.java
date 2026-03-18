@@ -119,11 +119,7 @@ public class Livraria {
 
     public void listarUsuarios() {
 
-
-        System.out.print("------------------Lista de usuários: ");
-
         for (int i = 0; i < usuariosCadastrados.length; i++) {
-
 
             if (usuariosCadastrados[i] != null) {
 
