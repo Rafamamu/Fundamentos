@@ -8,7 +8,7 @@ public class Usuario {
      private  String nome;
      private Livro [] livrosEmprestados;
 
-     public Usuario () {
+     public Usuario() {
 
      }
 

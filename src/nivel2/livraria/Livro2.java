@@ -1,26 +1,31 @@
 package nivel2.livraria;
 
-public class Livro {
+import java.time.LocalDate;
+
+public class Livro2 {
 
 
     private String nome;
     private double preco;
     private String autor;
-    private Status status;
+    private LocalDate dataemprestimo;
+    private Status2 status;
 
 
-    public Livro() {
+    public Livro2() {
 
     }
 
-    public Livro(String nome,
-                 double preco,
-                 String autor,
-                 Status status) {
+    public Livro2(String nome,
+                  double preco,
+                  String autor,
+                  LocalDate dataemprestimo,
+                  Status2 status) {
 
         this.nome = nome;
         this.preco = preco;
         this.autor = autor;
+        this.dataemprestimo = dataemprestimo;
         this.status = status;
 
     }
@@ -36,7 +41,10 @@ public class Livro {
     public String getAutor() {
         return autor;
     }
-    public Status getStatus() {
+    public LocalDate getDataemprestimo() {
+        return dataemprestimo;
+    }
+    public Status2 getStatus() {
         return status;
     }
 
@@ -50,7 +58,10 @@ public class Livro {
     public void setAutor(String autor) {
         this.autor = autor;
     }
-    public void setStatus(Status status) {
+    public void setDataemprestimo(LocalDate dataemprestimo) {
+        this.dataemprestimo = dataemprestimo;
+    }
+    public void setStatus(Status2 status) {
         this.status = status;
     }
 
@@ -59,6 +70,7 @@ public class Livro {
         return  "Nome: "+nome+" "+
                 "Preço: "+preco+" "+
                 "Autor: "+autor+" "+
+                "Data de Empréstimo: "+dataemprestimo+" "+
                 "Status: "+status+" ";
     }
 }

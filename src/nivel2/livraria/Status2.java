@@ -1,6 +1,6 @@
 package nivel2.livraria;
 
-public enum Status {
+public enum Status2 {
 
     DISPONIVEL("Este livro está disponível."),
     INDISPONIVEL("Desculpe ,este livro está indisponível no momento."),
@@ -8,7 +8,7 @@ public enum Status {
 
     private String message;
 
-    Status(String message) {
+    Status2(String message) {
         this.message = message;
     }
 
