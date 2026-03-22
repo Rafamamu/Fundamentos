@@ -12,7 +12,7 @@ public enum Status2 {
         this.message = message;
     }
 
-    public boolean estaDisponível() {
+    public boolean estaDisponivel() {
         return this == DISPONIVEL;
     }
 }

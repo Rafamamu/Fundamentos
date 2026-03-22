@@ -8,7 +8,7 @@ public class Livro2 {
     private String nome;
     private double preco;
     private String autor;
-    private LocalDate dataemprestimo;
+    private LocalDate dataEmprestimo;
     private Status2 status;
 
 
@@ -19,13 +19,13 @@ public class Livro2 {
     public Livro2(String nome,
                   double preco,
                   String autor,
-                  LocalDate dataemprestimo,
+                  LocalDate dataEmprestimo,
                   Status2 status) {
 
         this.nome = nome;
         this.preco = preco;
         this.autor = autor;
-        this.dataemprestimo = dataemprestimo;
+        this.dataEmprestimo = dataEmprestimo;
         this.status = status;
 
     }
@@ -42,7 +42,7 @@ public class Livro2 {
         return autor;
     }
     public LocalDate getDataemprestimo() {
-        return dataemprestimo;
+        return dataEmprestimo;
     }
     public Status2 getStatus() {
         return status;
@@ -59,7 +59,7 @@ public class Livro2 {
         this.autor = autor;
     }
     public void setDataemprestimo(LocalDate dataemprestimo) {
-        this.dataemprestimo = dataemprestimo;
+        this.dataEmprestimo = dataemprestimo;
     }
     public void setStatus(Status2 status) {
         this.status = status;
@@ -70,7 +70,7 @@ public class Livro2 {
         return  "Nome: "+nome+" "+
                 "Preço: "+preco+" "+
                 "Autor: "+autor+" "+
-                "Data de Empréstimo: "+dataemprestimo+" "+
+                "Data de Empréstimo: "+dataEmprestimo+" "+
                 "Status: "+status+" ";
     }
 }

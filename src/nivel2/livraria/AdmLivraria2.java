@@ -66,4 +66,37 @@ public class AdmLivraria2 {
             System.out.println("Livros cadastrados: "+livro);
         }
     }
+
+    public void listarUsuarios() {
+        for (Usuario2 usuario : usuariosCadastrados) {
+            System.out.println("Usuários cadastrados: "+usuario);
+        }
+    }
+
+    public void deletarUsuario(Usuario2 usuario) {
+        if (usuariosCadastrados.contains(usuario)) {
+            usuariosCadastrados.remove(usuario);
+        } else {
+            System.out.println("Usuário não existe! ");
+        }
+    }
+
+    public void deletarLivro(Livro2 livro) {
+        if (livrosCadastrados.contains(livro)) {
+            livrosCadastrados.remove(livro);
+        }else {
+            System.out.println("Livro não encontrado! ");
+        }
+
+    }
+
+    public void emprestarLivro(Usuario2 usuario, Livro2 livro ) {
+        if (livro.getStatus().estaDisponivel()) {
+            livro.setStatus(Status2.EMPRESTADO);
+            usuario.getLivrosEmprestados().add(livro);
+        }else {
+
+            throw  new IllegalStateException("Livro indisponível! ");
+        }
+    }
 }
