@@ -28,12 +28,15 @@ public class AdmLivraria2 {
     public String getLoginAdm() {
         return loginAdm;
     }
+
     public String getSenhaAdm() {
         return senhaAdm;
     }
+
     public ArrayList<Livro2> getLivrosCadastrados() {
-        return  livrosCadastrados;
+        return livrosCadastrados;
     }
+
     public ArrayList<Usuario2> getUsuariosCadastrados() {
         return usuariosCadastrados;
     }
@@ -45,9 +48,11 @@ public class AdmLivraria2 {
     public void setSenhaAdm(String senhaAdm) {
         this.senhaAdm = senhaAdm;
     }
+
     public void setLivrosCadastrados(ArrayList<Livro2> livrosCadastrados) {
         this.livrosCadastrados = livrosCadastrados;
     }
+
     public void setUsuariosCadastrados(ArrayList<Usuario2> usuariosCadastrados) {
         this.usuariosCadastrados = usuariosCadastrados;
     }
@@ -63,13 +68,13 @@ public class AdmLivraria2 {
 
     public void listarLivros() {
         for (Livro2 livro : livrosCadastrados) {
-            System.out.println("Livros cadastrados: "+livro);
+            System.out.println("Livros cadastrados: " + livro);
         }
     }
 
     public void listarUsuarios() {
         for (Usuario2 usuario : usuariosCadastrados) {
-            System.out.println("Usuários cadastrados: "+usuario);
+            System.out.println("Usuários cadastrados: " + usuario);
         }
     }
 
@@ -84,19 +89,44 @@ public class AdmLivraria2 {
     public void deletarLivro(Livro2 livro) {
         if (livrosCadastrados.contains(livro)) {
             livrosCadastrados.remove(livro);
-        }else {
+        } else {
             System.out.println("Livro não encontrado! ");
         }
 
     }
 
-    public void emprestarLivro(Usuario2 usuario, Livro2 livro ) {
+    public void emprestarLivro(Usuario2 usuario, Livro2 livro) {
         if (livro.getStatus().estaDisponivel()) {
             livro.setStatus(Status2.EMPRESTADO);
             usuario.getLivrosEmprestados().add(livro);
-        }else {
+        } else {
 
-            throw  new IllegalStateException("Livro indisponível! ");
+            throw new IllegalStateException("Livro indisponível! ");
         }
     }
+
+    public void devolverLivro(Usuario2 usuario, Livro2 livro) {
+        if (usuario.getLivrosEmprestados().contains(livro)) {
+            livro.setStatus(Status2.DISPONIVEL);
+            usuario.getLivrosEmprestados().remove(livro);
+        } else {
+            throw new IllegalStateException("Livro não encontrado! ");
+        }
+    }
+
+    public Livro2 buscarLivroPorNome(String nome) {
+        for (Livro2 livro : livrosCadastrados) {
+            if (livro.getNome().toUpperCase().equals(nome.toUpperCase())) {
+
+                return livro;
+
+            }
+
+        }
+
+        throw new IllegalStateException("Livro não encontrado! ");
+    }
+
+
+
 }

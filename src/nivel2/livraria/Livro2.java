@@ -5,6 +5,8 @@ import java.time.LocalDate;
 public class Livro2 {
 
 
+    private static  int contadorId;
+    private int id;
     private String nome;
     private double preco;
     private String autor;
@@ -22,12 +24,19 @@ public class Livro2 {
                   LocalDate dataEmprestimo,
                   Status2 status) {
 
+
+        this.id = ++contadorId;
         this.nome = nome;
         this.preco = preco;
         this.autor = autor;
         this.dataEmprestimo = dataEmprestimo;
         this.status = status;
 
+    }
+
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -67,7 +76,10 @@ public class Livro2 {
 
     @Override
     public String toString() {
-        return  "Nome: "+nome+" "+
+
+        return
+                "ID: "+id+" "+
+                "Nome: "+nome+" "+
                 "Preço: "+preco+" "+
                 "Autor: "+autor+" "+
                 "Data de Empréstimo: "+dataEmprestimo+" "+
