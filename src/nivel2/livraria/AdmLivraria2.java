@@ -66,23 +66,21 @@ public class AdmLivraria2 {
         usuariosCadastrados.add(usuario);
     }
 
-    public void listarLivros() {
-        for (Livro2 livro : livrosCadastrados) {
-            System.out.println("Livros cadastrados: " + livro);
-        }
+    public ArrayList<Livro2> listarLivros() {
+        return livrosCadastrados;
+
     }
 
-    public void listarUsuarios() {
-        for (Usuario2 usuario : usuariosCadastrados) {
-            System.out.println("Usuários cadastrados: " + usuario);
-        }
+    public ArrayList<Usuario2> listarUsuarios() {
+        return usuariosCadastrados;
     }
 
     public void deletarUsuario(Usuario2 usuario) {
         if (usuariosCadastrados.contains(usuario)) {
             usuariosCadastrados.remove(usuario);
         } else {
-            System.out.println("Usuário não existe! ");
+
+            throw  new IllegalStateException("Usuário não encontrado! ");
         }
     }
 
@@ -90,7 +88,8 @@ public class AdmLivraria2 {
         if (livrosCadastrados.contains(livro)) {
             livrosCadastrados.remove(livro);
         } else {
-            System.out.println("Livro não encontrado! ");
+
+            throw new IllegalStateException("Livro não encontrado!");
         }
 
     }
