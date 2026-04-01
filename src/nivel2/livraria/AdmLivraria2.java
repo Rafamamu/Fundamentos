@@ -80,7 +80,7 @@ public class AdmLivraria2 {
             usuariosCadastrados.remove(usuario);
         } else {
 
-            throw  new IllegalStateException("Usuário não encontrado! ");
+            throw new IllegalStateException("Usuário não encontrado! ");
         }
     }
 
@@ -126,6 +126,28 @@ public class AdmLivraria2 {
         throw new IllegalStateException("Livro não encontrado! ");
     }
 
+
+    public Livro2 buscarLivroPorId(int id) {
+        for (Livro2 livro : livrosCadastrados) {
+            if (livro.getId() == id) {
+                return livro;
+            }
+
+
+        }
+
+        throw new IllegalStateException("Id não encontrado!");
+
+    }
+
+    public Usuario2 buscarUsuarioPorId(int id) {
+        for (Usuario2 usuario : usuariosCadastrados) {
+            if (usuario.getId() == id) {
+                return usuario;
+            }
+        }
+        throw new IllegalStateException("Id de usuário não encontrado! ");
+    }
 
 
 }
