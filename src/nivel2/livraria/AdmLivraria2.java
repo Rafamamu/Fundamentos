@@ -150,4 +150,14 @@ public class AdmLivraria2 {
     }
 
 
+    public boolean validacaoLoginSenha(String loginAdm, String senhaAdm) {
+
+        if (this.loginAdm.equals(loginAdm) && this.senhaAdm.equals(senhaAdm) ) {
+            return  true;
+        }
+
+        return  false;
+    }
+
+
 }
