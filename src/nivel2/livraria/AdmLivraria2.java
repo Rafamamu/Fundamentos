@@ -115,7 +115,7 @@ public class AdmLivraria2 {
 
     public Livro2 buscarLivroPorNome(String nome) {
         for (Livro2 livro : livrosCadastrados) {
-            if (livro.getNome().toUpperCase().equals(nome.toUpperCase())) {
+            if (livro.getNome().equalsIgnoreCase(nome)) {
 
                 return livro;
 
@@ -151,13 +151,7 @@ public class AdmLivraria2 {
 
 
     public boolean validacaoLoginSenha(String loginAdm, String senhaAdm) {
-
-        if (this.loginAdm.equals(loginAdm) && this.senhaAdm.equals(senhaAdm) ) {
-            return  true;
-        }
-
-        return  false;
+        return  this.loginAdm.equals(loginAdm) && this.senhaAdm.equals(senhaAdm);
     }
-
 
 }
