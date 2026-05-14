@@ -20,6 +20,17 @@ public class Livro2 {
 
     public Livro2(String nome,
                   double preco,
+                  String autor) {
+        this.id = ++contadorId;
+        this.nome = nome;
+        this.preco = preco;
+        this.autor = autor;
+        this.status = Status2.DISPONIVEL;
+
+    }
+
+    public Livro2(String nome,
+                  double preco,
                   String autor,
                   LocalDate dataEmprestimo,
                   Status2 status) {
